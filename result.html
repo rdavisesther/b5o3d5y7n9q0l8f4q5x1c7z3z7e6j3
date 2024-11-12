@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Results</title>
+</head>
+<body>
+    <h1>Results for {{ domain }}</h1>
+    <ul>
+        {% if spf_results %}
+            {% for result in spf_results %}
+                <li>{{ result }}</li>
+            {% endfor %}
+        {% else %}
+            <li>No SPF records found for any subdomains.</li>
+        {% endif %}
+    </ul>
+    <a href="/">Check Another Domain</a>
+</body>
+</html>
